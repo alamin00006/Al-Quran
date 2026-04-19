@@ -1,13 +1,10 @@
 import type { Surah, SurahMeta } from "@/types/quran";
 import type { ApiResponse } from "@/types/api";
-
-// Resolves the backend API URL for server-side static generation.
-const getServerBaseUrl = () =>
-  process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api/v1";
+import { getBaseUrl } from "@/lib/config/envConfig";
 
 // Fetches build-time Quran data from the backend for SSG pages.
 async function fetchFromApi<TData>(path: string): Promise<TData> {
-  const response = await fetch(`${getServerBaseUrl()}${path}`, {
+  const response = await fetch(`${getBaseUrl()}${path}`, {
     cache: "force-cache",
   });
 
