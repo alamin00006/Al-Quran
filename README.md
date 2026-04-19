@@ -25,7 +25,7 @@ This project contains both frontend and backend in the same repository:
 ```
 Al-Quran/
 ├── client/   # Next.js frontend
-├── server/   # Node.js backend
+├── backend/   # Node.js backend
 ```
 
 ## Setup & Installation
@@ -49,7 +49,7 @@ npm install
 #### Backend (Node.js)
 
 ```bash
-cd ../server
+cd ../backend
 npm install
 ```
 
@@ -58,7 +58,7 @@ npm install
 #### Start backend
 
 ```bash
-cd server
+cd backend
 npm run dev
 ```
 
