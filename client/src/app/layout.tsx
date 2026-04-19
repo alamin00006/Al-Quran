@@ -5,6 +5,9 @@ import { Providers } from "./providers";
 export const metadata: Metadata = {
   title: "Al-Quran",
   description: "Read and reflect on the Noble Quran.",
+  icons: {
+    icon: "/icon.svg",
+  },
 };
 
 // Provides the root HTML shell and application providers for every route.

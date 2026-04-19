@@ -20,10 +20,12 @@ export function AppLayout({ children }: { children: ReactNode }) {
           <main className="container flex-1 min-w-0 pb-6 pt-[5.5rem] sm:pb-12 sm:pt-28 animate-fade-in">
             {children}
           </main>
-          <footer className="border-t border-border/50 py-8 text-center text-sm text-muted-foreground">
+          <footer className="footer-surface border-t border-primary/20 py-5 text-center text-sm text-primary-foreground shadow-soft">
             <div className="container">
-              <p className="font-display text-base text-foreground/80">Al-Qur'an al-Karim</p>
-              <p className="mt-1 text-xs">Read &middot; Reflect &middot; Remember</p>
+              <p className="font-display text-base font-semibold">Al-Qur'an al-Karim</p>
+              <p className="mt-1 text-xs tracking-wide text-primary-foreground/75">
+                Read &middot; Reflect &middot; Remember
+              </p>
             </div>
           </footer>
         </div>

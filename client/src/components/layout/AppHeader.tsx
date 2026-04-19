@@ -9,7 +9,7 @@ export function AppHeader() {
   const { settings, toggleTheme } = useSettings();
 
   return (
-    <header className="fixed inset-x-0 top-0 z-40 glass-strong border-b border-border/50">
+    <header className="fixed inset-x-0 top-0 z-40 glass-strong border-b border-border/40 shadow-soft">
       <div className="container flex h-16 min-w-0 items-center justify-between gap-3">
         <Link href="/" className="group flex min-w-0 items-center gap-3 font-semibold">
           <div className="relative flex h-10 w-10 shrink-0 items-center justify-center rounded-xl gradient-primary text-primary-foreground shadow-soft transition-spring group-hover:scale-105 group-hover:shadow-glow">
@@ -38,7 +38,7 @@ export function AppHeader() {
               <Moon className="h-[18px] w-[18px]" />
             )}
           </Button>
-          <SidebarTrigger className="h-9 w-9 rounded-full" />
+          <SidebarTrigger className="h-10 w-10 rounded-full" aria-label="Open settings" />
         </div>
       </div>
     </header>
