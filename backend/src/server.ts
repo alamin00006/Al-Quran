@@ -2,7 +2,7 @@ import app from "./app.js";
 import config from "./config/index.js";
 import { connectDB } from "./config/db.js";
 
-async function bootstrap() {
+async function main() {
   try {
     await connectDB(config.databaseUrl);
     app.listen(config.port, () => {
@@ -15,7 +15,7 @@ async function bootstrap() {
   }
 }
 
-void bootstrap();
+void main();
 
 process.on("unhandledRejection", (reason) => {
   console.error("Unhandled Rejection:", reason);
