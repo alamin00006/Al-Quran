@@ -11,7 +11,7 @@ https://al-quran-n8xy.vercel.app/
 - Ayat Page with Arabic text and translation
 - Search functionality (search by translation text)
 - Settings panel:
-  - Arabic font selection (3 fonts)
+  - Arabic font selection
   - Arabic font size control
   - Translation font size control
 - Settings are persisted using localStorage
