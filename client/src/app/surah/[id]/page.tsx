@@ -1,5 +1,5 @@
 import SurahPage from "@/components/surah/SurahPage";
-import { getStaticSurahById, getStaticSurahs } from "@/lib/server/quran-api";
+import { getStaticSurahById, getStaticSurahs } from "@/lib/ssg/quran-ssg-api";
 
 export const dynamic = "force-static";
 export const dynamicParams = false;
@@ -20,5 +20,7 @@ export default async function Page({ params }: { params: { id: string } }) {
     getStaticSurahs(),
   ]);
 
-  return <SurahPage id={params.id} initialSurah={surah} initialSurahs={surahs} />;
+  return (
+    <SurahPage id={params.id} initialSurah={surah} initialSurahs={surahs} />
+  );
 }

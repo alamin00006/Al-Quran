@@ -4,11 +4,11 @@ import { useMemo, useState } from "react";
 
 import { useSettings, arabicFontClass } from "@/hooks/use-settings";
 import { useDebounced } from "@/hooks/use-debounced";
-import { useSearchAyahsByTextQuery } from "@/store/api";
+import { useSearchAyahsByTextQuery } from "@/store/quran-search-api";
 import { AyahSearchResults } from "@/components/home/AyahSearchResults";
 import { HomeHero } from "@/components/home/HomeHero";
 import { SurahGrid } from "@/components/home/SurahGrid";
-import { AyahSearchSkeleton } from "@/components/loadingStates/AyahSearchSkeleton";
+import { AyahSearchSkeleton } from "@/components/home/AyahSearchSkeleton";
 import { SectionHeader } from "@/components/shared/SectionHeader";
 import { normalizeSearchText } from "@/lib/search-normalize";
 import { getLocalizedSurahName } from "@/lib/surah-name";

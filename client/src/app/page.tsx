@@ -1,5 +1,5 @@
 import SurahListPage from "@/components/home/SurahListPage";
-import { getStaticSurahs } from "@/lib/server/quran-api";
+import { getStaticSurahs } from "@/lib/ssg/quran-ssg-api";
 
 export const dynamic = "force-static";
 

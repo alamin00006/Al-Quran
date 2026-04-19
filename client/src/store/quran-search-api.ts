@@ -6,8 +6,8 @@ import type {
 import type { Verse } from "@/types/quran";
 import { baseApi } from "./base-api";
 
-// Injects Quran-specific endpoints into the shared RTK Query API slice.
-export const quranApi = baseApi.injectEndpoints({
+// Injects Quran search endpoints into the shared RTK Query API slice.
+export const quranSearchApi = baseApi.injectEndpoints({
   endpoints: (endpointBuilder) => ({
     searchAyahsByText: endpointBuilder.query<SearchAyahsResponse, SearchAyahsQueryParams>({
       // Searches ayah translations by text and language.
@@ -40,4 +40,4 @@ export const quranApi = baseApi.injectEndpoints({
   overrideExisting: false,
 });
 
-export const { useSearchAyahsByTextQuery } = quranApi;
+export const { useSearchAyahsByTextQuery } = quranSearchApi;
