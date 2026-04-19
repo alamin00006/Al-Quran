@@ -82,6 +82,14 @@ const SurahListPage = ({
     [apiSearchResponse?.results, settings.translation, surahNameById],
   );
 
+  const hasSearchTerm = debouncedSearchTerm.length > 0;
+  const shouldShowSurahs = !hasSearchTerm || filteredSurahs.length > 0;
+  const shouldShowAyahResults = isAyahSearch && (isSearchingAyahs || ayahHits.length > 0);
+  const hasNoSearchResults =
+    hasSearchTerm &&
+    filteredSurahs.length === 0 &&
+    (!isAyahSearch || (!isSearchingAyahs && ayahHits.length === 0));
+
   return (
     <div className="min-w-0 space-y-8 sm:space-y-12">
       {/* Hero section with the global search input. */}
@@ -91,24 +99,24 @@ const SurahListPage = ({
         onClearSearch={() => setSearchInput("")}
       />
 
-      {/* Surah list section with local filtering against SSG metadata. */}
-      <section>
-        <SectionHeader
-          title={debouncedSearchTerm ? "Matching Surahs" : "Browse Surahs"}
-          countLabel={`${filteredSurahs.length} ${
-            filteredSurahs.length === 1 ? "surah" : "surahs"
-          }`}
-        />
-        <SurahGrid
-          surahs={filteredSurahs}
-          searchTerm={debouncedSearchTerm}
-          translation={settings.translation}
-          arabicFont={settings.arabicFont}
-        />
-      </section>
+      {shouldShowSurahs && (
+        <section>
+          <SectionHeader
+            title={hasSearchTerm ? "Matching Surahs" : "Browse Surahs"}
+            countLabel={`${filteredSurahs.length} ${
+              filteredSurahs.length === 1 ? "surah" : "surahs"
+            }`}
+          />
+          <SurahGrid
+            surahs={filteredSurahs}
+            searchTerm={debouncedSearchTerm}
+            translation={settings.translation}
+            arabicFont={settings.arabicFont}
+          />
+        </section>
+      )}
 
-      {/* Ayah search section that queries the backend when the search term is long enough. */}
-      {isAyahSearch && (
+      {shouldShowAyahResults && (
         <section>
           <SectionHeader
             title="Matching Ayahs"
@@ -127,6 +135,12 @@ const SurahListPage = ({
             />
           )}
         </section>
+      )}
+
+      {hasNoSearchResults && (
+        <p className="rounded-2xl border border-dashed border-border bg-card/40 py-12 text-center text-sm text-muted-foreground">
+          No results found for "{debouncedSearchTerm}".
+        </p>
       )}
     </div>
   );
