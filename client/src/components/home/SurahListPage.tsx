@@ -84,7 +84,8 @@ const SurahListPage = ({
 
   const hasSearchTerm = debouncedSearchTerm.length > 0;
   const shouldShowSurahs = !hasSearchTerm || filteredSurahs.length > 0;
-  const shouldShowAyahResults = isAyahSearch && (isSearchingAyahs || ayahHits.length > 0);
+  const shouldShowAyahResults =
+    isAyahSearch && (isSearchingAyahs || ayahHits.length > 0);
   const hasNoSearchResults =
     hasSearchTerm &&
     filteredSurahs.length === 0 &&

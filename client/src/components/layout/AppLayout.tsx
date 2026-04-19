@@ -17,7 +17,7 @@ export function AppLayout({ children }: { children: ReactNode }) {
         />
         <div className="flex min-w-0 flex-1 flex-col">
           <AppHeader />
-          <main className="container flex-1 min-w-0 pb-6 pt-[5.5rem] sm:pb-12 sm:pt-28 animate-fade-in">
+          <main className="container flex-1 min-w-0 py-20 sm:py-24 animate-fade-in">
             {children}
           </main>
           <footer className="footer-surface border-t border-primary/20 py-5 text-center text-sm text-primary-foreground shadow-soft">

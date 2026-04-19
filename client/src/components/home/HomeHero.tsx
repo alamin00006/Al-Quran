@@ -1,7 +1,8 @@
 import { Sparkles } from "lucide-react";
 import { SearchInput } from "@/components/shared/SearchInput";
 
-const heroArabicText = "\u0671\u0642\u0652\u0631\u064e\u0623\u0652 \u0628\u0650\u0671\u0633\u0652\u0645\u0650 \u0631\u064e\u0628\u0650\u0651\u0643\u064e";
+const heroArabicText =
+  "\u0671\u0642\u0652\u0631\u064e\u0623\u0652 \u0628\u0650\u0671\u0633\u0652\u0645\u0650 \u0631\u064e\u0628\u0650\u0651\u0643\u064e";
 
 const heroStats = [
   { value: "114", label: "Surahs" },
@@ -37,19 +38,25 @@ export function HomeHero({
         {/* Page introduction and title. */}
         <div className="mx-auto inline-flex max-w-full items-center gap-2 rounded-full border border-primary-foreground/20 bg-primary-foreground/10 px-3 py-1.5 text-xs font-medium backdrop-blur-sm sm:px-4">
           <Sparkles className="h-3 w-3 text-accent-glow" />
-          <span className="truncate uppercase tracking-wider">The Noble Quran</span>
+          <span className="truncate uppercase tracking-wider">
+            The Noble Quran
+          </span>
         </div>
 
         <h1 className="mt-6 font-display text-3xl font-bold tracking-tight sm:text-6xl">
           Read &amp; Reflect
         </h1>
 
-        <p className="mt-4 font-amiri text-2xl text-accent-glow sm:text-3xl" dir="rtl">
+        <p
+          className="mt-4 font-amiri text-2xl text-accent-glow sm:text-3xl"
+          dir="rtl"
+        >
           {heroArabicText}
         </p>
 
         <p className="mx-auto mt-4 max-w-xl text-sm text-primary-foreground/80 sm:text-base">
-          Search any surah or ayah - all 6,236 verses with Arabic, English &amp; Bangla translations.
+          Search any surah or ayah - all 6,236 verses with Arabic, English &amp;
+          Bangla translations.
         </p>
 
         {/* Search input used for both surah filtering and ayah search. */}
