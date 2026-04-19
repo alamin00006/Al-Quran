@@ -15,6 +15,9 @@ function isTranslationLanguage(value: string): value is TranslationLanguage {
   return translationLanguages.includes(value as TranslationLanguage);
 }
 
+/**
+ * Searches ayah translations with bounded pagination and local JSON fallback for database failures.
+ */
 export async function searchAyahs({
   q,
   lang = "en",
@@ -33,6 +36,7 @@ export async function searchAyahs({
     return searchLocalAyahs({ q, lang, limit, page });
   }
 
+  // Escape user input before building a case-insensitive MongoDB regex query.
   const safeSearchTerm = q.trim().replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
   const boundedLimit = Math.min(limit, 200);
   const boundedPage = page;
@@ -51,6 +55,7 @@ export async function searchAyahs({
 
     return { total, page: boundedPage, limit: boundedLimit, results };
   } catch {
+    // Search remains functional from the bundled dataset if MongoDB cannot complete the query.
     return searchLocalAyahs({ q, lang, limit, page });
   }
 }

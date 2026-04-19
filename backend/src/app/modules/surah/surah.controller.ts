@@ -6,6 +6,9 @@ import { parsePositiveInteger } from "../../../shared/requestValidation.js";
 import { getAyahsBySurah } from "../ayah/ayah.service.js";
 import { getSurahById, listSurahs } from "./surah.service.js";
 
+/**
+ * Handles the surah index endpoint and returns lightweight metadata for all chapters.
+ */
 export const list = catchAsync(async (_request: Request, response: Response) => {
   const data = await listSurahs();
   sendResponse(response, {
@@ -17,6 +20,9 @@ export const list = catchAsync(async (_request: Request, response: Response) => 
   });
 });
 
+/**
+ * Handles a single-surah request after validating the route parameter.
+ */
 export const getOne = catchAsync(async (request: Request, response: Response) => {
   const surahId = parsePositiveInteger(request.params.id, "Surah id");
   const data = await getSurahById(surahId);
@@ -28,6 +34,9 @@ export const getOne = catchAsync(async (request: Request, response: Response) =>
   });
 });
 
+/**
+ * Handles verse collection requests for a specific surah.
+ */
 export const getAyahs = catchAsync(async (request: Request, response: Response) => {
   const surahId = parsePositiveInteger(request.params.id, "Surah id");
   const data = await getAyahsBySurah(surahId);

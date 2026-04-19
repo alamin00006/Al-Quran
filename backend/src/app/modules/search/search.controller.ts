@@ -10,6 +10,9 @@ function getQueryString(value: unknown): string | undefined {
   return typeof value === "string" ? value : undefined;
 }
 
+/**
+ * Handles translation search requests and normalizes query parameters for the service layer.
+ */
 export const search = catchAsync(async (request: Request, response: Response) => {
   const query = getQueryString(request.query.q);
   const language = getQueryString(request.query.lang) as TranslationLanguage | undefined;

@@ -5,6 +5,9 @@ import sendResponse from "../../../shared/sendResponse.js";
 import { parsePositiveInteger } from "../../../shared/requestValidation.js";
 import { getAyah } from "./ayah.service.js";
 
+/**
+ * Handles lookup requests for a single ayah after validating both route parameters.
+ */
 export const getOne = catchAsync(async (request: Request, response: Response) => {
   const surahId = parsePositiveInteger(request.params.surahId, "Surah id");
   const ayahId = parsePositiveInteger(request.params.ayahId, "Ayah id");
