@@ -1,4 +1,4 @@
-import type { Translation, Verse } from "@/lib/quran-types";
+import type { Translation, Verse } from "@/types/quran";
 import { HighlightedText } from "@/components/shared/HighlightedText";
 
 // Renders one ayah with Arabic text, translation, numbering, and highlights.

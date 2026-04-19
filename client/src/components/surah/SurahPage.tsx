@@ -10,7 +10,7 @@ import { SurahNavigation } from "@/components/surah/SurahNavigation";
 import { VerseList } from "@/components/surah/VerseList";
 import { SearchInput } from "@/components/shared/SearchInput";
 import { normalizeSearchText } from "@/lib/search-normalize";
-import type { Surah, SurahMeta } from "@/lib/quran-types";
+import type { Surah, SurahMeta } from "@/types/quran";
 
 // Determines whether the Bismillah should appear before the current surah.
 const shouldShowBismillah = (surahId: number, searchTerm: string) =>

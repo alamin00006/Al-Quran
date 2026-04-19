@@ -1,23 +1,11 @@
 import type { BaseQueryFn } from "@reduxjs/toolkit/query";
-import type { AxiosError, AxiosRequestConfig } from "axios";
+import type { AxiosError } from "axios";
+import type {
+  AxiosBaseQueryArgs,
+  AxiosBaseQueryError,
+  AxiosBaseQueryOptions,
+} from "@/types/axios";
 import { apiClient } from "./axiosInstance";
-
-type AxiosBaseQueryArgs = {
-  url: string;
-  method?: AxiosRequestConfig["method"];
-  data?: AxiosRequestConfig["data"];
-  params?: AxiosRequestConfig["params"];
-  headers?: AxiosRequestConfig["headers"];
-};
-
-type AxiosBaseQueryOptions = {
-  baseUrl?: string;
-};
-
-type AxiosBaseQueryError = {
-  status?: number;
-  data: unknown;
-};
 
 // Adapts Axios requests to RTK Query's base query contract.
 export const axiosBaseQuery =

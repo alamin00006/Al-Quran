@@ -1,5 +1,5 @@
 import { BookOpen, MapPin } from "lucide-react";
-import type { Surah, Translation } from "@/lib/quran-types";
+import type { Surah, Translation } from "@/types/quran";
 import { getLocalizedSurahName } from "@/lib/surah-name";
 
 // Displays the selected surah's title, metadata, and Arabic name.

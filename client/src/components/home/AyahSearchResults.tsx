@@ -1,6 +1,6 @@
 import { memo } from "react";
 import Link from "next/link";
-import type { Translation } from "@/lib/quran-types";
+import type { Translation } from "@/types/quran";
 import { HighlightedText } from "@/components/shared/HighlightedText";
 import type { AyahSearchHit } from "@/types/quran";
 

@@ -1,5 +1,6 @@
-import { createContext, useContext, useEffect, useState, ReactNode, useCallback } from "react";
-import { Settings, ArabicFont, Translation, Theme } from "@/lib/quran-types";
+import { createContext, useContext, useEffect, useState, type ReactNode, useCallback } from "react";
+import type { Settings, ArabicFont } from "@/types/quran";
+import type { SettingsContextValue } from "@/types/settings";
 
 const STORAGE_KEY = "quran-settings-v1";
 
@@ -10,17 +11,6 @@ const DEFAULT_SETTINGS: Settings = {
   translation: "en",
   theme: "light",
 };
-
-interface SettingsContextValue {
-  settings: Settings;
-  setArabicFont: (f: ArabicFont) => void;
-  setArabicSize: (n: number) => void;
-  setTranslationSize: (n: number) => void;
-  setTranslation: (t: Translation) => void;
-  setTheme: (t: Theme) => void;
-  toggleTheme: () => void;
-  reset: () => void;
-}
 
 const SettingsContext = createContext<SettingsContextValue | null>(null);
 

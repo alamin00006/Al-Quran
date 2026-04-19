@@ -1,17 +1,10 @@
 "use client";
 
-import Link, { type LinkProps } from "next/link";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { forwardRef } from "react";
 import { cn } from "@/lib/utils";
-
-interface NavLinkCompatProps
-  extends Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, "href" | "className">,
-    LinkProps {
-  className?: string;
-  activeClassName?: string;
-  pendingClassName?: string;
-}
+import type { NavLinkCompatProps } from "@/types/ui";
 
 // Renders a Next.js link with automatic active-route styling.
 const NavLink = forwardRef<HTMLAnchorElement, NavLinkCompatProps>(

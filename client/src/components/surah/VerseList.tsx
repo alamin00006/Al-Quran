@@ -1,4 +1,4 @@
-import type { Translation, Verse } from "@/lib/quran-types";
+import type { Translation, Verse } from "@/types/quran";
 import { VerseCard } from "./VerseCard";
 
 // Renders the ordered ayah list for a selected surah.

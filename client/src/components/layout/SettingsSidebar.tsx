@@ -17,7 +17,7 @@ import {
 import { Slider } from "@/components/ui/slider";
 import { Button } from "@/components/ui/button";
 import { Moon, RotateCcw, Settings as SettingsIcon, Sun } from "lucide-react";
-import type { ArabicFont, Translation } from "@/lib/quran-types";
+import type { ArabicFont, Translation } from "@/types/quran";
 
 // Renders reader preferences for theme, translation, typography, and reset.
 export function SettingsSidebar() {

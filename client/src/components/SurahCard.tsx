@@ -1,6 +1,6 @@
 import { memo } from "react";
 import Link from "next/link";
-import type { ArabicFont, SurahMeta, Translation } from "@/lib/quran-types";
+import type { ArabicFont, SurahMeta, Translation } from "@/types/quran";
 import { arabicFontClass } from "@/hooks/use-settings";
 import { getLocalizedSurahName } from "@/lib/surah-name";
 

@@ -1,4 +1,4 @@
-import type { SurahMeta, Translation } from "@/lib/quran-types";
+import type { SurahMeta, Translation } from "@/types/quran";
 
 // Returns the localized surah name for the active translation language.
 export function getLocalizedSurahName(

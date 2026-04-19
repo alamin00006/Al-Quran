@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import type { SurahMeta, Translation } from "@/lib/quran-types";
+import type { SurahMeta, Translation } from "@/types/quran";
 import { getLocalizedSurahName } from "@/lib/surah-name";
 
 // Renders previous and next surah links for sequential reading.

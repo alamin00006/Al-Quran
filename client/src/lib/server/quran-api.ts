@@ -1,9 +1,5 @@
-import type { Surah, SurahMeta } from "@/lib/quran-types";
-
-type ApiResponse<TData> = {
-  success: boolean;
-  data: TData;
-};
+import type { Surah, SurahMeta } from "@/types/quran";
+import type { ApiResponse } from "@/types/api";
 
 // Resolves the backend API URL for server-side static generation.
 const getServerBaseUrl = () =>

@@ -1,6 +1,6 @@
 import { memo } from "react";
 import { SurahCard } from "@/components/SurahCard";
-import type { ArabicFont, SurahMeta, Translation } from "@/lib/quran-types";
+import type { ArabicFont, SurahMeta, Translation } from "@/types/quran";
 
 // Renders the responsive grid of surah navigation cards.
 function SurahGridComponent({

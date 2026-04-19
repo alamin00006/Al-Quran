@@ -1,29 +1,10 @@
-import type { Verse } from "@/lib/quran-types";
+import type {
+  ApiResponse,
+  SearchAyahsQueryParams,
+  SearchAyahsResponse,
+} from "@/types/api";
+import type { Verse } from "@/types/quran";
 import { baseApi } from "./base-api";
-
-export type TranslationLanguage = "en" | "bn";
-
-interface ApiResponse<TData, TMeta = unknown> {
-  success: boolean;
-  statusCode?: number;
-  message?: string | null;
-  data: TData;
-  meta?: TMeta;
-}
-
-export interface SearchAyahsQueryParams {
-  searchTerm: string;
-  translationLanguage?: TranslationLanguage;
-  page?: number;
-  limit?: number;
-}
-
-export interface SearchAyahsResponse {
-  total: number;
-  page: number;
-  limit: number;
-  results: Array<Verse & { surahId: number }>;
-}
 
 // Injects Quran-specific endpoints into the shared RTK Query API slice.
 export const quranApi = baseApi.injectEndpoints({

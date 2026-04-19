@@ -13,7 +13,7 @@ import { SectionHeader } from "@/components/shared/SectionHeader";
 import { normalizeSearchText } from "@/lib/search-normalize";
 import { getLocalizedSurahName } from "@/lib/surah-name";
 import type { AyahSearchHit } from "@/types/quran";
-import type { SurahMeta } from "@/lib/quran-types";
+import type { SurahMeta } from "@/types/quran";
 
 const MIN_AYAH_SEARCH_LENGTH = 2;
 const MAX_SEARCH_RESULTS = 50;
